@@ -89,7 +89,7 @@
                     <div class="form-group {{ $errors->has('password_confirmation') ? ' has-danger' : '' }}">
                         <label for="reference" class="col-md-2 control-label">Wachtwoord herhalen</label>
                         <div class="col-md-9">
-                            <input autocomplete="off" placeholder="Wachtwoord herhalen" id="wachtwoord" type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}">
+                            <input autocomplete="off" placeholder="Wachtwoord herhalen" id="wachtwoord_herhalen" type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}">
 
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
