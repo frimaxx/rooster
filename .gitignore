@@ -1,5 +1,7 @@
 #mystuff
-
+/public/assets/images/logos
+/public/assets/images/avatars
+/public/temp_img
 
 # Created by https://www.gitignore.io/api/node,macos,laravel,phpstorm,composer
 
