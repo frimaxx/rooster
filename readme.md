@@ -44,7 +44,7 @@ cp .env.example .env
 ```
 Migreer nu de database en maak een applicatie key aan
 ```console
-php artisan migrate && php artisan generate:key
+php artisan migrate && php artisan key:generate
 ```
 
 **waarschuwing**: zorg ervoor dat nginx/apache2 naar de public directory gewezen staat ivm met veiligheid.
