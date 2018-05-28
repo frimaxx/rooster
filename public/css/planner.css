@@ -1,0 +1,93 @@
+.roosterItem {
+    list-style: none;
+    border-left: 10px solid darkgrey;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.roosterList {
+    margin-right: 20px;
+    padding-left: 0px;
+}
+.roosterWrapper {
+    margin-left: 20px;
+}
+#wrap {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+}
+#external-events {
+    width: 220px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    text-align: left;
+    margin-right: 20px;
+    position: fixed;
+    z-index: 2;
+}
+
+.trash {
+    width: 220px;
+    padding: 0 10px;
+    border: 2px dashed #ff3333;
+    background: #f8eded;
+    text-align: left;
+    margin-right: 20px;
+    position: fixed;
+    z-index: 1;
+}
+.inner-trash {
+    position: fixed;
+    top: 50%;
+}
+
+#external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+#external-events .fc-event {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+}
+
+#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+}
+
+#calendar {
+    flex: 1;
+}
+.fc-event {
+    padding: 4px;
+    color: #fff;
+}
+.fc-event .fc-bg {
+}
+.fc-time-grid .fc-bgevent, .fc-time-grid .fc-event {
+    border: 2px solid;
+}
+.external-events-wrapper {
+    width: 230px;
+}
+@media only screen and (max-width:991px){
+    #wrap {
+        display: none;
+    }
+}
+@media only screen and (min-width:991px) {
+    #desktop-message {
+        display: none;
+    }
+}

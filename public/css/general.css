@@ -1,0 +1,74 @@
+#app {
+    padding: 0 0 10px 0;
+}
+#searchForm {
+    padding: 15px;
+    width: 102%;
+    margin:0;
+}
+#submitButton {
+    padding: 14px;
+    margin-top: -3px;
+    width: 100%;
+}
+#branchSelector {
+    margin-bottom: 10px;
+}
+.card {
+    margin: 0;
+}
+.card-block {
+    padding: 10px 10px 10px 15px;
+}
+.infoText {
+    margin:0;
+    padding:0;
+}
+.card-header {
+    background: #fff;
+}
+.collapse-body {
+    padding: 5px;
+}
+.noPadding {
+    padding: 0 0 0 10px;
+    margin: 0;
+}
+.link {
+    padding: 0 0 0 15px;
+    color: #3097D1;
+}
+.link:visited {
+    color: #3097D1;
+}
+.navbar-brand img, .navbar-brand svg {
+    max-height: 37px;
+    vertical-align: -10px;
+}
+.control-label {
+    word-wrap: break-word;
+}
+.user-avatar {
+    height: 80px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+/** Not collapsed navbar logo **/
+@media only screen and (max-width:992px){
+    .dynamic-logo {
+        display: none;
+    }
+}
+@media only screen and (min-width:992px){
+    .dynamic-logo {
+        display: block;
+    }
+    .dynamic-logo svg, .dynamic-logo img {
+        height: 50px;
+        margin-top: 8px;
+    }
+    .navside:hover .dynamic-logo {
+        display: none;
+    }
+}
