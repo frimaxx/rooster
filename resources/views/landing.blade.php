@@ -63,6 +63,9 @@
                     <a class="nav-link scroll-link" data-href="pricing">Tarieven</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link scroll-link" data-href="mission">Missie</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link scroll-link" data-href="contact">Contact</a>
                 </li>
             </ul>
@@ -88,6 +91,11 @@
     <a style="text-decoration: none" class="scroll-link" data-href="pricing">
         <div class="row mobile-link">
             <p class="link-text">Tarieven</p>
+        </div>
+    </a>
+    <a style="text-decoration: none" class="scroll-link" data-href="mission">
+        <div class="row mobile-link">
+            <p class="link-text">Missie</p>
         </div>
     </a>
     <a style="text-decoration: none" class="scroll-link" data-href="contact">
@@ -142,7 +150,7 @@
                 </div>
             </div>
             <div class="col-md-7">
-                <img class="full-width" src="/assets/images/promos/promo-1-big.png" alt="promo image">
+                <img class="full-width" src="/assets/images/promos/promo-1-big.png" alt="gratis bedrijfsroosters maken">
             </div>
         </div>
     </div>
@@ -276,6 +284,29 @@
     </p>
 </div>
 <!-- END PRICING -->
+
+<!-- START MISSION -->
+<div id="mission" class="container mt-5">
+    <div class="row pt-4">
+        <div class="col-md-6">
+            <h1 class="header">Onze missie</h1>
+            <p class="sub-paragraph">Onze missie is om bedrijven van onhandige papieren roosters af te helpen.
+                Dit doen we door een eenvoudige, simpele, en elegante applicatie aan te bieden voor bedrijven.
+                Ook is Rooster helemaal gratis en <a target="_blank" href="https://github.com/frimaxx/rooster">open source</a>.
+                Zo kan iedereen aan online bedrijfsroosters geholpen worden.</p>
+        </div>
+        <div class="col-md-6 mission-items">
+            <h3 class="mission-tag"><img src="/assets/images/icons/people.svg" alt="people">Één community</h3>
+            <p>Bij rooster proberen we zoveel mogelijk te luisteren naar onze community. U bepaalt dus wat onze volgende
+            stap word in het doorontwikkelen van Rooster</p>
+
+            <h3 class="mission-tag mt-3"><img src="/assets/images/icons/github.svg" alt="people">Open source</h3>
+            <p>Rooster is <a href="https://github.com/frimaxx/rooster" target="_blank">open source</a>. Dat betekend dat iedereen de bouwstenen van Rooster kan bekijken, downloaden,
+            en aanpassen voor eigen gebruik.</p>
+        </div>
+    </div>
+</div>
+<!-- END MISSION -->
 
 <!-- START CONTACT -->
 <div id="contact" class="grey-section mt-5 pt-4 pb-4">

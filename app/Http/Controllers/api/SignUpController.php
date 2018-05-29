@@ -93,6 +93,8 @@ class SignUpController extends Controller
             'uren_max' => 0
         ]);
 
+        $signup->delete();
+
         return response()->json([
             'hasErrors' => false,
             'api_token' => $user->api_token
