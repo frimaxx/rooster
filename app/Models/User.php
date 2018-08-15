@@ -87,9 +87,9 @@ class User extends Authenticatable
 
     public function branchesEmployee()
     {
-        if ($this->user_level > 2) {
-            return Branch::orderBy('name', 'asc')->where('company_id', $this->company_id)->get();
-        }
+//        if ($this->user_level > 2) {
+//            return Branch::orderBy('name', 'asc')->where('company_id', $this->company_id)->get();
+//        }
         return Employee::select('branches.id', 'branches.name', 'branches.reference', 'branches.city', 'branches.address', 'branches.postal_code')
             ->where('user_id', $this->id)
             ->join('branches', 'branches.id', 'employees.branch_id')

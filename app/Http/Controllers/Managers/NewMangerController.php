@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Managers;
 
+use App\Mail\MailUserCredentials;
 use App\Models\Employee;
 use App\Models\Manager;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Branch;
 
@@ -70,6 +72,18 @@ class NewMangerController extends Controller
            'user_id' => $user->id,
             'branch_id' => $request->input('filiaal')
         ]);
+
+
+        if($request->input('mail_credentials') == 'on') {
+            Mail::to($request->input('email'))->send(new MailUserCredentials([
+                'newUser' => [
+                    'name' => $request->input('voornaam'),
+                    'username' => $request->input('gebruikersnaam'),
+                    'password' => $request->input('password')
+                ],
+                'manager_name' => request()->user()->name
+            ]));
+        }
 
         flash('Manager is aangemaakt', 'success');
         return redirect()->back();

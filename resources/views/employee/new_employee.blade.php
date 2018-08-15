@@ -102,40 +102,40 @@
                 <div class="row">
                     <div class="form-group {{ $errors->has('uren_min') ? ' has-danger' : '' }} {{ $errors->has('uren_max') ? ' has-danger' : '' }}">
                         <label for="reference" class="col-md-2 control-label">Uren min en Uren max</label>
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <select name="uren_min" class="form-control">
-                                                @if(empty(old('uren_min')))
-                                                    <option disabled="" value="" selected>Selecteer minimaal aantal uren</option>
-                                                @endif
-                                                @for($i = 0; $i <= 50; $i++)
-                                                    <option @if(old('uren_min') == $i && $i !== 0) selected @endif value="{{$i}}">{{$i}} uur</option>
-                                                @endfor
-                                            </select>
-                                            @if ($errors->has('uren_min'))
-                                                <span class="help-block">
-                                                <strong>{{ $errors->first('uren_min') }}</strong>
-                                            </span>
-                                            @endif
-                                        </div>
-                                        <div class="col-md-6">
-                                            <select name="uren_max" class="form-control">
-                                                @if(empty(old('uren_max')))
-                                                    <option disabled="" value="" selected>Selecteer maximaal aantal uren</option>
-                                                @endif
-                                                @for($i = 0; $i <= 50; $i++)
-                                                    <option @if(old('uren_max') == $i && $i !== 0) selected @endif value="{{$i}}">{{$i}} uur</option>
-                                                @endfor
-                                            </select>
-                                            @if ($errors->has('uren_min'))
-                                                <span class="help-block">
-                                                <strong>{{ $errors->first('uren_max') }}</strong>
-                                            </span>
-                                            @endif
-                                        </div>
-                                    </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="uren_min" class="form-control">
+                                        @if(empty(old('uren_min')))
+                                            <option disabled="" value="" selected>Selecteer minimaal aantal uren</option>
+                                        @endif
+                                        @for($i = 0; $i <= 50; $i++)
+                                            <option @if(old('uren_min') == $i && $i !== 0) selected @endif value="{{$i}}">{{$i}} uur</option>
+                                        @endfor
+                                    </select>
+                                    @if ($errors->has('uren_min'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('uren_min') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
+                                <div class="col-md-6">
+                                    <select name="uren_max" class="form-control">
+                                        @if(empty(old('uren_max')))
+                                            <option disabled="" value="" selected>Selecteer maximaal aantal uren</option>
+                                        @endif
+                                        @for($i = 0; $i <= 50; $i++)
+                                            <option @if(old('uren_max') == $i && $i !== 0) selected @endif value="{{$i}}">{{$i}} uur</option>
+                                        @endfor
+                                    </select>
+                                    @if ($errors->has('uren_min'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('uren_max') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -156,6 +156,15 @@
                                 <strong>{{ $errors->first('filiaal') }}</strong>
                             </span>
                             @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group {{ $errors->has('filiaal') ? ' has-danger' : '' }}">
+                        <div class="col-md-9 offset-md-2">
+                            <input type="checkbox" name="mail_credentials" id="mailCredentials">
+                            <label class="form-check-label" for="mailCredentials">Inloggegevens mailen</label>
                         </div>
                     </div>
                 </div>

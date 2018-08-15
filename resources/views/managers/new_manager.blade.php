@@ -121,6 +121,15 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="form-group {{ $errors->has('filiaal') ? ' has-danger' : '' }}">
+                        <div class="col-md-9 offset-md-2">
+                            <input type="checkbox" name="mail_credentials" id="mailCredentials">
+                            <label class="form-check-label" for="mailCredentials">Inloggegevens mailen</label>
+                        </div>
+                    </div>
+                </div>
+
                 <div style="margin-top: 10px;" class="row">
                     <div class="col-md-11">
                         <input value="Manager maken" type="submit" class="btn btn-primary pull-right">

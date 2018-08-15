@@ -57,7 +57,7 @@ class EditCompanyController extends Controller
             $hash = $company->id . '-' . str_random(40) . '.png';
             $storageLocation = 'assets/images/logos/' . $hash;
 
-            Image::make($logo->getRealPath())->fit(190, 40)->save($storageLocation);
+            Image::make($logo->getRealPath())->fit(220, 60)->save($storageLocation);
 
             $new_logo = $hash;
         }
@@ -73,10 +73,10 @@ class EditCompanyController extends Controller
             $new_logo_small = null;
         }
         if ($small_logo) {
-            $hash =  $company->id  . '-s-' . str_random(40) . '.jpg';
+            $hash =  $company->id  . '-s-' . str_random(40) . '.png';
             $storageLocation = 'assets/images/logos/' . $hash;
 
-            Image::make($small_logo->getRealPath())->fit(80, 80)->save($storageLocation);
+            Image::make($small_logo->getRealPath())->fit(120, 120)->save($storageLocation);
 
             $new_logo_small = $hash;
         }
