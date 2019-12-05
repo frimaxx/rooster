@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Mail\SignUpMail;
+use App\Models\Branch;
 use App\Models\Company;
 use App\Models\SignUp;
 use App\Models\User;
@@ -30,11 +31,11 @@ class SignUpController extends Controller
         }
 
         $signup = SignUp::create([
-           'name' => $request->input('name'),
-           'email' => $request->input('email'),
-           'company_name' => $request->input('bedrijfsnaam'),
-           'token' => str_random(60),
-           'expire' => Carbon::now()->addDays(7)
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'company_name' => $request->input('bedrijfsnaam'),
+            'token' => str_random(60),
+            'expire' => Carbon::now()->addDays(7)
         ]);
 
         Mail::to($request->input('email'))->send(new SignUpMail($signup));
@@ -51,8 +52,8 @@ class SignUpController extends Controller
 
         if (!$signup || Carbon::now() > Carbon::parse($signup->expire)) {
             return response()->json([
-               'hasErrors' => true,
-               'message' => "invalid token"
+                'hasErrors' => true,
+                'message' => "invalid token"
             ], 403);
         }
 
@@ -65,6 +66,11 @@ class SignUpController extends Controller
             'city' => 'required|min:3',
             'postal_code' => 'required|size:6',
             'address' => 'required|min:3',
+            'branch_name' => 'required|min:3|max:100',
+            'branch_reference' => 'required|min:1|max:100',
+            'branch_city' => 'required|min:3',
+            'branch_postal_code' => 'required|size:6',
+            'branch_address' => 'required|min:3',
             'confirmed' => [ Rule::in('yes')]
         ]);
         if ($validator->fails()) {
@@ -81,6 +87,15 @@ class SignUpController extends Controller
             'address' => $request->input('address'),
         ]);
 
+        $branch = Branch::create([
+            'company_id' => $company->id,
+            'name' => $request->input('branch_name'),
+            'reference' => $request->input('branch_reference'),
+            'city' => $request->input('branch_city'),
+            'postal_code' => $request->input('branch_postal_code'),
+            'address' => $request->input('branch_address'),
+        ]);
+
         $user = User::create([
             'name' => $request->input('name'),
             'username' => $request->input('username'),
@@ -88,6 +103,7 @@ class SignUpController extends Controller
             'password' => bcrypt($request->input('password')),
             'user_level' => 4,
             'company_id' => $company->id,
+            'branch_address' => $branch->id,
             'api_token' => str_random(60),
             'uren_min' => 0,
             'uren_max' => 0

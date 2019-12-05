@@ -73,7 +73,6 @@ class NewMangerController extends Controller
             'branch_id' => $request->input('filiaal')
         ]);
 
-
         if($request->input('mail_credentials') == 'on') {
             Mail::to($request->input('email'))->send(new MailUserCredentials([
                 'newUser' => [

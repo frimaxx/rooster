@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Branches;
 
 use App\Models\Branch;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -58,6 +59,11 @@ class NewBranchController extends Controller
         $user = $request->user();
         $user->current_branch_id = $branch->id;
         $user->save();
+
+        Employee::create([
+            'user_id' => $user->id,
+            'branch_id' => $branch->id
+        ]);
 
         Session::put('branch', ['name' => $branch->name, 'id' => $branch->id]);
 

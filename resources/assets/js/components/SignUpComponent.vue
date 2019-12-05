@@ -25,8 +25,8 @@
                 </div>
 
                 <!--<div class="md-form-group float-label">-->
-                    <!--<input name="email" type="email" class="md-input has-value" v-model="formData.email" disabled>-->
-                    <!--<label>Email</label>-->
+                <!--<input name="email" type="email" class="md-input has-value" v-model="formData.email" disabled>-->
+                <!--<label>Email</label>-->
                 <!--</div>-->
 
                 <div class="md-form-group float-label">
@@ -96,13 +96,70 @@
             </form>
         </tab-content>
 
+        <tab-content title="Filiaal" icon="ti-home" :before-change="validateThirdStep">
+            <form @submit.prevent="nextButtonClick">
+                <div class="md-form-group float-label">
+                    <input name="branch_name" type="text" class="md-input has-value" v-model="formData.branch_name" required>
+                    <label>Filiaal naam</label>
+                    <template v-if="errors.branch_name">
+                        <span class="help-block">
+                            <strong>{{errors.branch_name[0]}}</strong>
+                        </span>
+                    </template>
+                </div>
+
+                <div class="md-form-group float-label">
+                    <input name="branch_reference" type="text" class="md-input has-value" v-model="formData.branch_reference" required>
+                    <label>Filiaal referentie</label>
+                    <template v-if="errors.branch_reference">
+                        <span class="help-block">
+                            <strong>{{errors.branch_reference[0]}}</strong>
+                        </span>
+                    </template>
+                </div>
+
+                <div class="md-form-group float-label">
+                    <input name="branch_city" type="text" class="md-input" v-model="formData.branch_city" required>
+                    <label>Stad</label>
+                    <template v-if="errors.branch_city">
+                        <span class="help-block">
+                            <strong>{{errors.branch_city[0]}}</strong>
+                        </span>
+                    </template>
+                </div>
+
+                <div class="md-form-group float-label">
+                    <input name="branch_postal_code" type="text" class="md-input" v-model="formData.branch_postal_code" required>
+                    <label>Postcode</label>
+                    <template v-if="errors.branch_postal_code">
+                        <span class="help-block">
+                            <strong>{{errors.branch_postal_code[0]}}</strong>
+                        </span>
+                    </template>
+                </div>
+
+
+                <div class="md-form-group float-label">
+                    <input name="branch_address" type="text" class="md-input" v-model="formData.branch_address" required>
+                    <label>Adres</label>
+                    <template v-if="errors.branch_address">
+                        <span class="help-block">
+                            <strong>{{errors.branch_address[0]}}</strong>
+                        </span>
+                    </template>
+                </div>
+
+                <input type="submit" style="display: none;">
+            </form>
+        </tab-content>
+
         <tab-content title="Bevestiging" icon="ti-check">
             Bedankt, controleer uw gegevens en klik op voltooien wanneer u klaar bent om uw registratie te voltooien.
 
             <table class="w-100 table">
                 <!--<tr>-->
-                    <!--<th>Month</th>-->
-                    <!--<th>Savings</th>-->
+                <!--<th>Month</th>-->
+                <!--<th>Savings</th>-->
                 <!--</tr>-->
                 <tr>
                     <td>Gebruikersnaam</td>
@@ -150,6 +207,11 @@
                     city: '',
                     postal_code: '',
                     address: '',
+                    branch_name: '',
+                    branch_reference: '',
+                    branch_city: '',
+                    branch_postal_code: '',
+                    branch_address: '',
                     confirmed: 'no',
                     token: this.data.token
                 },
@@ -158,24 +220,28 @@
         },
         methods: {
             nextButtonClick() {
-              document.getElementById('next-btn').click();
+                document.getElementById('next-btn').click();
             },
             onComplete: function() {
                 this.formData.confirmed = 'yes';
-                console.log(this.validateThirdStep());
+                console.log(this.validateFourthStep());
             },
             validateFirstStep() {
                 return new Promise((resolve, reject) => {
-                    resolve(this.submitData(4));
+                    resolve(this.submitData(9));
                 })
             },
             validateSecondStep() {
-                console.log('2nd');
+                return new Promise((resolve, reject) => {
+                    resolve(this.submitData(6));
+                })
+            },
+            validateThirdStep() {
                 return new Promise((resolve, reject) => {
                     resolve(this.submitData(1));
                 })
             },
-            validateThirdStep() {
+            validateFourthStep() {
                 return new Promise((resolve, reject) => {
                     resolve(this.submitData(0));
                 })
