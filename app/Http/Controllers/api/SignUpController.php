@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\SignUpMail;
 use App\Models\Branch;
 use App\Models\Company;
+use App\Models\Employee;
 use App\Models\SignUp;
 use App\Models\User;
 use Carbon\Carbon;
@@ -107,6 +108,11 @@ class SignUpController extends Controller
             'api_token' => str_random(60),
             'uren_min' => 0,
             'uren_max' => 0
+        ]);
+
+        Employee::create([
+            'user_id' => $user->id,
+            'branch_id' => $branch->id
         ]);
 
         $signup->delete();
