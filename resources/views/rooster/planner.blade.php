@@ -5,7 +5,7 @@
 @section('stylesheets')
     <link href='/calendar/css/fullcalendar.min.css' rel='stylesheet' />
     <link href="/calendar/css/fullcalendar.print.min.css' rel='stylesheet" media="print" />
-    <link rel="stylesheet" href="/css/planner.css">
+    <link rel="stylesheet" href="/css/planner.css?v=1.0">
 @endsection
 
 @section('content')
