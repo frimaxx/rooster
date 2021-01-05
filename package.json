@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/fritsvt/rooster#readme",
   "dependencies": {
-    "axios": "^0.18",
+    "axios": "^0.21",
     "bootstrap": "^4.0.0",
     "cross-env": "^5.1",
     "jquery": "^3.2",
