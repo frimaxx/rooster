@@ -26,7 +26,7 @@
   "homepage": "https://github.com/fritsvt/rooster#readme",
   "dependencies": {
     "axios": "^0.18",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.1",
     "jquery": "^3.2",
     "laravel-mix": "^2.0",
